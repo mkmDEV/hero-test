@@ -12,10 +12,9 @@ body {
 }
 
 .hero {
-  overflow-y: hidden;
+  overflow: hidden;
   background: $heroBgColor;
   margin: 0 auto;
-  width: 90%;
   height: $heroRowHeight;
   display: flex;
   flex-direction: row;
