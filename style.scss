@@ -4,14 +4,16 @@ $lg: 1024px;
 
 $heroRowHeight: 500px;
 
-$heroRightBgColor: rgb(226, 226, 226);
-$blue: rgb(0,141,234);
+$heroBgColor: rgb(226, 226, 226);
+$blue: rgb(0, 141, 234);
 
 body {
   overflow: hidden;
 }
 
 .hero {
+  overflow-y: hidden;
+  background: $heroBgColor;
   margin: 0 auto;
   width: 90%;
   height: $heroRowHeight;
@@ -19,31 +21,21 @@ body {
   flex-direction: row;
 
   .hero--left, .hero--right {
-    border: 2px solid $blue;
     width: 50%;
     height: 100%;
   }
 
   .hero--right {
     position: relative;
-    overflow: hidden;
-    background: $heroRightBgColor;
+    background: $heroBgColor;
     z-index: 0;
-
-    .hero--right__overlay {
-      width: 180px;
-      height: 100%;
-      z-index: 1;
-      transform: rotate(180deg);
-    }
 
     .hero--right__woman {
       height: 100%;
       position: absolute;
-      left: 1vw;
-      top:-2vh;
-      transform: scale(1.1) translateX(10%);
-      object-fit: cover;
+      top: 0;
+      left: 30px;
+      transform: scale(1.1);
     }
   }
 
@@ -53,6 +45,7 @@ body {
     content: '';
     border-left: 12vw solid transparent;
     border-bottom: $heroRowHeight solid $blue;
+    border-radius: 500px 0 0 0;
     position: absolute;
     top: 0;
     left: 0;
